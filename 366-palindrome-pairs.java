@@ -23,7 +23,7 @@
 
   Approach:
     1. For each string S in A[], create the mapping S -> index.
-    2. For each string S, consider each of the k combinations of ways to parition S into 2 pairs. 
+    2. For each string S, consider each of the k-1 combinations of ways to parition S into 2 pairs. 
     3. For each combination, check if we can make a palindrome using the above logic.
    
   Edges cases:
