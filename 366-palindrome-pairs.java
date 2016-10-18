@@ -20,11 +20,9 @@
        b. If RHS is a palindrome, then the string Reverse(RHS) + LHS + RHS makes a paldindrome.
 
   Thus, the process is as follows:
-    a. For each of the n strings S, put Reverse(S) into a map. O(n)
-    b. For each of the n strings S, consider each of the k combinations of ways to parition S into 2 pairs . O(n) + O(n*k)
-    c. For each combination, check if we can make a palindrome. O(n) + O(n*k*k)
-    
-  The final time is O(n*k^2)
+    a. For each strings S, put Reverse(S) into a map. O(n)
+    b. For each strings S, consider each of the k combinations of ways to parition S into 2 pairs. O(n*k)
+    c. For each combination, check if we can make a palindrome. O(n*k*k)
 */
 
 
