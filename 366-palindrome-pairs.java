@@ -1,5 +1,6 @@
 /* 
   @problem
+  
   Given a list of unique words. Find all pairs of distinct indices (i, j) in the given list, so that 
   the concatenation of the two words, i.e. words[i] + words[j] is a palindrome.
 
@@ -12,21 +13,33 @@
 
   @solution
   
-  1. Given a string S, consider all partitions of the string S into 2 pairs (LHS, RHS).
-     For a string of length k, this gives k possible pairs.
-       Ex] Given "abaab", consider ("", "abaab"), ("a", "baab"), ("ab", "aab"), ("aba", "ab"), ("abaa", "b")
-      
-  2. Note the following 2 possibilities:
+  Key Insight:
+    * Given a string S, consider all partitions of the string S into 2 pairs (LHS, RHS).
+    * For a string of length k, this gives k-1 possible pairs.
+       Ex] Given "abaab", consider ("a", "baab"), ("ab", "aab"), ("aba", "ab"), ("abaa", "b")
+    * Note how the following holds true:
        a. If RHS is a palindrome, then the string LHS + RHS + Reverse(LHS) makes a palindrome.
        b. If LHS is a palindrome, then the string Reverse(RHS) + LHS + RHS makes a paldindrome.
 
-  Thus, the process is as follows:
-    a. For each strings S, put Reverse(S) into a map. Use indices as the value, as we need them for the final answer.
-    b. For each strings S, consider each of the k combinations of ways to parition S into 2 pairs. O(n*k)
-    c. For each combination, check if we can make a palindrome. O(n*k*k)
+  Approach:
+    1. For each strings S, put S into a map. Use indices as the value, as we need them for the final answer.
+    2. For each strings S, consider each of the k combinations of ways to parition S into 2 pairs. 
+    3. For each combination, check if we can make a palindrome using the logic from step (2)
+   
+  Edges cases:
+    1. Consider if Reverse(S) is present. I.e., the pair (S, Reverse(S)).
+      * Note this implies for a string of length k, there are actually exactly k possible pairs.
+    2. Consider the empty string. ("", S) and (S, "") is a palindrom IFF S is a palindrome.
+    3. Since we are returning indices, be careful not to concatenate a string with itself when searching for the reverse.
+    
+  Complexity: 
+    Given n strings, we iterate over each string S, giving O(n).
+    For each S, we check all k combinations for palindromicity, giving O(n*k).
+    Since checking for palindromicity takes O(k), this gives total time O(n*k*k).
 */
 
 
+/* Beats 81.21% as of 10/18/2016 */
 public class Solution {
     
   // Check if String is palindrome. 
