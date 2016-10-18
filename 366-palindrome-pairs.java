@@ -49,8 +49,7 @@ public class Solution {
         return false;
       }
     }
-    // For this problem, consider the empty string as not a palindrome
-    return s.isEmpty() ? false : true;  
+    return true;  
   }
     
   // Utility function
