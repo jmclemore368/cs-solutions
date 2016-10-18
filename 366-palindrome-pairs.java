@@ -19,18 +19,18 @@
        Ex] Given "abaab", consider ("a", "baab"), ("ab", "aab"), ("aba", "ab"), ("abaa", "b")
     * Note how the following holds true:
        a. If RHS is a palindrome, then the string LHS + RHS + Reverse(LHS) makes a palindrome.
-       b. If LHS is a palindrome, then the string Reverse(RHS) + LHS + RHS makes a paldindrome.
+       b. If LHS is a palindrome, then the string Reverse(RHS) + LHS + RHS makes a palindrome.
 
   Approach:
-    1. For each strings S, put S into a map. Use indices as the value, as we need them for the final answer.
-    2. For each strings S, consider each of the k combinations of ways to parition S into 2 pairs. 
-    3. For each combination, check if we can make a palindrome using the logic from step (2)
+    1. For each string S in A[], create the mapping S -> index.
+    2. For each string S, consider each of the k combinations of ways to parition S into 2 pairs. 
+    3. For each combination, check if we can make a palindrome using the above logic.
    
   Edges cases:
     1. Consider if Reverse(S) is present. I.e., the pair (S, Reverse(S)).
-      * Note this implies for a string of length k, there are actually exactly k possible pairs.
-    2. Consider the empty string. ("", S) and (S, "") is a palindrom IFF S is a palindrome.
-    3. Since we are returning indices, be careful not to concatenate a string with itself when searching for the reverse.
+      * Thus, contrary to what we said earlier, for a string of length k, there are actually exactly k possible pairs
+    2. Consider the empty string. The pairs ("", S) and (S, "") are palindromes if and only if S is a palindrome.
+    3. Do not concatenate S with itself. Check that Reverse(S) and S have distinct indices (assumes no duplicates).
     
   Complexity: 
     Given n strings, we iterate over each string S, giving O(n).
