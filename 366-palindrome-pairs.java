@@ -69,7 +69,7 @@ public class Solution {
     }
         
     // For each strings S, consider each of the k combinations of ways to partition S into 2 pairs.
-    // Edge cases: Be careful not to concatenate a string with itself
+    // Edge cases: Do not concatenate S with itself. Check that Reverse(S) and S have distinct indices.
     Integer index;
     for (int i = 0; i < words.length; ++i) {
 
