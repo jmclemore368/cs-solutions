@@ -27,7 +27,7 @@
     3. For each combination, check if we can make a palindrome using the above logic.
    
   Edges cases:
-    1. Consider if Reverse(S) is present. I.e., the pair (S, Reverse(S)).
+    1. Consider if Reverse(S) is present. Then the pair (S, Reverse(S)) is a palindrome.
       * Thus, contrary to what we said earlier, for a string of length k, there are actually exactly k possible pairs
     2. Consider the empty string. The pairs ("", S) and (S, "") are palindromes if and only if S is a palindrome.
     3. Do not concatenate S with itself. Check that Reverse(S) and S have distinct indices (assumes no duplicates).
