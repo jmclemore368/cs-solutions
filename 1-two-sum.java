@@ -56,7 +56,7 @@ public class Solution {
                 // Edge case: Make sure B and A are not the same element
                 if ((A = hm.get(target-B)) != j) {
                     
-                    // Since A - B must be A, and A + B = T, we have found both A and B.
+                    // Since T - B must be A, and A + B = T, we have found both A and B.
                     result[0] = j;  // Index of B
                     result[1] = A;  // Index of A
                     break;
