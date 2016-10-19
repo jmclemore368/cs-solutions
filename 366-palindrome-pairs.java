@@ -14,10 +14,9 @@
   @solution
   
   Key Insight:
-    * Given a string S, consider all partitions of the string S into 2 pairs (LHS, RHS).
-    * For a string of length k, this gives k-1 possible pairs.
-       Ex] Given "abaab", consider ("a", "baab"), ("ab", "aab"), ("aba", "ab"), ("abaa", "b")
-    * Note how the following holds true:
+    1. Given a string S, consider all k-1 partitions of the string S into 2 pairs (LHS, RHS).
+    2. For example, "abaab" can be partitioned as: ("a", "baab"), ("ab", "aab"), ("aba", "ab"), or ("abaa", "b").
+    3. Note how the following holds true:
        a. If RHS is a palindrome, then the string LHS + RHS + Reverse(LHS) makes a palindrome.
        b. If LHS is a palindrome, then the string Reverse(RHS) + LHS + RHS makes a palindrome.
 
@@ -28,14 +27,14 @@
    
   Edges cases:
     1. Consider if Reverse(S) is present. Then the pair (S, Reverse(S)) is a palindrome.
-      * Thus, contrary to what we said earlier, for a string of length k, there are actually exactly k possible pairs
+      - If we count this one, for a string of length k, there are actually exactly k possible partitions into 2 pairs (LHS, RHS).
     2. Consider the empty string. The pairs ("", S) and (S, "") are palindromes if and only if S is a palindrome.
     3. Do not concatenate S with itself. Check that Reverse(S) and S have distinct indices (assumes no duplicates).
     
-  Complexity: 
-    Given n strings, we iterate over each string S, giving O(n).
-    For each S, we check all k combinations for palindromicity, giving O(n*k).
-    Since checking for palindromicity takes O(k), this gives total time O(n*k*k).
+  Time Complexity: 
+    1. Given n strings, we iterate over each string S, giving O(n).
+    2. For each S, we check all k combinations for palindromicity, giving O(n*k).
+    3. Since checking for palindromicity takes O(k), this gives total time O(n*k*k).
 */
 
 
