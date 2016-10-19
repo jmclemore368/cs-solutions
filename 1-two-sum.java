@@ -32,6 +32,7 @@
     Space: O(n) since we create a mapping for each element.
 */
 
+// Beats 54.04% as of 10/19/2016
 public class Solution {
     public int[] twoSum(int[] nums, int target) {
         
