@@ -15,17 +15,17 @@
   
   Key Insight:
     - Given T, we want to find arbitrary A and B such that T = A + B. Note that A = T - B.
-    - Thus, for every arbitrary number B, we want to see if T - B exists in the nums[].
-    - If T - B exists in the array, and since A = T - B, we know that A exists in nums[]/
-    - Thus, if A and B both exist in nums[], and A + B = T then we have found the solution.
+    - Thus, for every arbitrary number B, we want to see if T - B exists in nums[].
+    - If T - B exists in nums[], then T - B must be A.
+    - Thus, if A and B both exist in nums[], and A + B = T, then we have found the solution.
     
   Approach:
     1. For each element B in nums[], create the mapping B -> index.
-    2. For each element B in nums[], check if T - B exists in the map. If so, then this element T - B must be A.
+    2. For each element B in nums[], check if T - B exists. If so, then this element T - B must be A.
     3. Since T - B must be A and A + B = T, we found the two-sum. Return the indices of A and B.
   
   Edge cases:
-    1. Consider when B and A are equal, like 6 = 3 + 3. Thus, make sure A and B are not the same element when checking the map.
+    1. Consider when B and A are equal, like 6 = 3 + 3. Thus, make sure A and B are not the same element.
        
   Complexity: 
     Time: O(n) since we iterate over each element at most twice.
