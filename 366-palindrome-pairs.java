@@ -77,7 +77,7 @@ public class Solution {
         result.add(Arrays.asList(new Integer[] {i, index}));
       }
             
-      // Edge case: Consider the empty string. ("", S) and (S, "") is a palindrom IFF S is a palindrome.
+      // Edge case: Consider the empty string. ("", S) and (S, "") is a palindrome IFF S is a palindrome.
       if ((index = hm.get("")) != null && index.intValue() != i) {
         if (isPalindrome(words[i])){
           result.add(Arrays.asList(new Integer[] {i, index}));
@@ -93,6 +93,7 @@ public class Solution {
 
         // If LHS is a palindrome, then the string Reverse(RHS) + LHS + RHS makes a palindrome.
         if (isPalindrome(LHS)){
+          // Check if Reverse(RHS) exists.
           if ((index = hm.get(reverseString(RHS))) != null && index.intValue() != i) {
             result.add(Arrays.asList(new Integer[] {index, i}));
           }
@@ -100,6 +101,7 @@ public class Solution {
                 
         // If RHS is a palindrome, then the string LHS + RHS + Reverse(LHS) makes a palindrome.
         if (isPalindrome(RHS)){
+          // Check if Reverse(LHS) exists.
           if ((index = hm.get(reverseString(LHS))) != null && index.intValue() != i) {
             result.add(Arrays.asList(new Integer[] {i, index}));
           }
