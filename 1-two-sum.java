@@ -23,7 +23,8 @@
     1. For each element B in nums[], create the mapping B -> index.
     2. For each element B in nums[], check if T - B exists. 
     3. If T - B exists, then this element T - B must be A.
-    4. Since A - B must be A, and A + B = T, we have found the two-sum. Return the indices of A and B.
+    4. Since A - B must be A, and A + B = T, we have found both A and B.
+    5. Return the indices of A and B.
   
   Edge cases:
     1. Consider when B and A are equal, like 6 = 3 + 3. Thus, make sure A and B are not the same element.
@@ -56,6 +57,8 @@ public class Solution {
                 
                 // Edge case: Make sure B and A are not the same element
                 if ((A = hm.get(target-B)) != j) {
+                    
+                    // Since A - B must be A, and A + B = T, we have found both A and B.
                     result[0] = j;  // Index of B
                     result[1] = A;  // Index of A
                     break;
@@ -63,7 +66,7 @@ public class Solution {
             }
         }
       
-        // Since A - B must be A, and A + B = T, we have found the two-sum. Return the indices of A and B.
+        // Return the indices of A and B.
         return result;
         
     }
