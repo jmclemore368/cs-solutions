@@ -14,10 +14,9 @@
   @solution
   
   Key Insight:
-    - Given T, we want to find arbitrary A and B such that T = A + B. Note that A = T - B.
-    - Thus, for every arbitrary number B, we want to see if T - B exists in nums[].
-    - If T - B exists in nums[], then T - B must be A.
-    - Thus, if A and B both exist in nums[], and A + B = T, then we have found the solution.
+    1. Given T, we want to find arbitrary A and B such that T = A + B. Note that A = T - B.
+    2. For every arbitrary B, we want to see if T - B exists in nums[]. If T - B exists in nums[], then T - B must be A.
+    3. Thus, if A and B both exist in nums[], and A + B = T, then we have found 2 numbers that add to T in nums[].
     
   Approach:
     1. For each element B in nums[], create the mapping B -> index.
@@ -29,9 +28,8 @@
   Edge cases:
     1. Consider when B and A are equal, like 6 = 3 + 3. Thus, make sure A and B are not the same element.
        
-  Complexity: 
-    Time: O(n) since we iterate over each element at most twice.
-    Space: O(n) since we create a mapping for each element.
+  Time Complexity:
+    1. We iterate over each element at most twice, giving O(n).
 */
 
 // Beats 54.04% as of 10/19/2016
@@ -47,7 +45,7 @@ public class Solution {
             hm.put(nums[i], i);
         }
         
-        // For each element B in nums[], check if T - B exists in the map.
+        // For each element B in nums[], check if T - B exists.
         for (int j = 0; j < nums.length; ++j) {
             int A; // Not found yet
             int B = nums[j]; 
