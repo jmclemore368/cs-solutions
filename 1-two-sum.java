@@ -23,7 +23,7 @@
     1. For each element B in nums[], create the mapping B -> index.
     2. For each element B in nums[], check if T - B exists. 
     3. If T - B exists, then this element T - B must be A.
-    4. Since A - B must be A, and A + B = T, we have found both A and B.
+    4. Since T - B must be A, and A + B = T, we have found both A and B.
     5. Return the indices of A and B.
   
   Edge cases:
