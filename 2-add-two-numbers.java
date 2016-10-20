@@ -1,7 +1,4 @@
-
-
-
-
+// See https://leetcode.com/articles/add-two-numbers/ for a detailed explanation if needed.
 
 /**
  * Definition for singly-linked list.
@@ -16,11 +13,11 @@ public class Solution {
         
         // Make a dummy head to keep track of the front of the list
         ListNode dummyHead = new ListNode(0);
-
-        // For iterating
+        
+        // For traversing the list
         ListNode iterator = dummyHead;
         
-        // While neither are null
+        // Reuse l1 and l2 to save space.
         int carry = 0;
         while (l1 != null || l2 != null) {
             int sum = carry;
@@ -38,13 +35,12 @@ public class Solution {
             iterator = iterator.next;
         } 
         
+        // Add on a final carry if necessary.
         if (carry != 0) {
             iterator.next = new ListNode(carry);
         }
         
         // Return the reused list
         return dummyHead.next;
-        
-        
     }
 }
