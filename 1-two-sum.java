@@ -1,35 +1,6 @@
 /* 
-  @problem
-  
-  Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-
-  You may assume that each input would have exactly one solution.
-
-  Example:
-  Given nums = [2, 7, 11, 15], target = 9,
-
-  Because nums[0] + nums[1] = 2 + 7 = 9,
-  return [0, 1].
-  
-  @solution
-  
-  Key Insight:
-    1. Given T, we want to find arbitrary A and B such that T = A + B. Note that A = T - B.
-    2. For every arbitrary B, we want to see if T - B exists in nums[]. If T - B exists in nums[], then T - B must be A.
-    3. Thus, if A and B both exist in nums[], and A + B = T, then we have found 2 numbers that add to T in nums[].
-    
-  Approach:
-    1. For each element B in nums[], create the mapping B -> index.
-    2. For each element B in nums[], check if T - B exists. 
-    3. If T - B exists, then this element T - B must be A.
-    4. Since T - B must be A, and A + B = T, we have found both A and B.
-    5. Return the indices of A and B.
-  
-  Edge cases:
-    1. Consider when B and A are equal, like 6 = 3 + 3. Thus, make sure A and B are not the same element.
-       
-  Time Complexity:
-    1. We iterate over each element at most twice, giving O(n).
+  https://leetcode.com/problems/two-sum/
+  https://leetcode.com/articles/two-sum/
 */
 
 // Beats 54.04% as of 10/19/2016
