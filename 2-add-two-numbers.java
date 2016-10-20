@@ -1,4 +1,7 @@
-// See https://leetcode.com/articles/add-two-numbers/ for a detailed explanation if needed.
+/*
+   https://leetcode.com/problems/add-two-numbers/
+   https://leetcode.com/articles/add-two-numbers/
+*/
 
 /**
  * Definition for singly-linked list.
