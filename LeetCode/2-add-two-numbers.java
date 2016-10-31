@@ -15,7 +15,6 @@
 // Beats 55.12% as of 10/31/2016
 public class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-
         // Use a dummyHead to simplify keeping track of the head of the list
         ListNode dummyHead = new ListNode(0);
         ListNode iterator = head;

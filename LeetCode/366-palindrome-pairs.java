@@ -3,7 +3,7 @@
   https://leetcode.com/problems/palindrome-pairs/
 
   @solution
-  
+
   Key Insight:
     1. Given a string S, consider all k-1 partitions of the string S into 2 pairs (LHS, RHS).
     2. For example, "abaab" can be partitioned as: ("a", "baab"), ("ab", "aab"), ("aba", "ab"), or ("abaa", "b").
