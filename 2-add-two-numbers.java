@@ -11,6 +11,8 @@
  *     ListNode(int x) { val = x; }
  * }
  */
+
+// Beats 55.12% as of 10/31/2016
 public class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
        
