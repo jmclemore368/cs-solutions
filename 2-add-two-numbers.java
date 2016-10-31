@@ -11,21 +11,15 @@
  *     ListNode(int x) { val = x; }
  * }
  */
- 
 public class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        
-        // Make a dummy head to keep track of the front of the list
+       
+        // Use a dummyHead to simplify keeping track of the head of the list
         ListNode dummyHead = new ListNode(0);
-        
-        // For traversing the list
-        ListNode iterator = dummyHead;
-        
-        // Reuse l1 and l2 to save space.
-        int carry = 0;
+        ListNode iterator = head;
+        int sum = 0;
+       
         while (l1 != null || l2 != null) {
-            int sum = carry;
-            
             if (l1 != null) {
                 sum += l1.val;
                 l1 = l1.next;
@@ -35,16 +29,15 @@ public class Solution {
                 l2 = l2.next;
             }
             iterator.next = new ListNode(sum % 10);
-            carry = sum / 10;
+            sum = sum / 10;   // Carry
             iterator = iterator.next;
-        } 
-        
-        // Add on a final carry if necessary.
-        if (carry != 0) {
-            iterator.next = new ListNode(carry);
         }
         
-        // Return the reused list
-        return dummyHead.next;
+        // If there's a carry
+        if (sum != 0) {
+            iterator.next = new ListNode(sum);
+        }
+        
+        return dummyHead.next; 
     }
 }
