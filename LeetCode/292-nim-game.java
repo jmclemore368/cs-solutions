@@ -22,6 +22,7 @@ public class Solution {
         boolean takeThree = canWinNimHelper(n-3, !myTurn);
         boolean takeTwo = canWinNimHelper(n-2, !myTurn);
         boolean takeOne = canWinNimHelper(n-1, !myTurn);
+        
         // If it's not my turn, and all outcomes result in me winning
         // then my opponent cannot possibly win
         if (myTurn == false && (takeThree == true && takeTwo == true && takeOne == true)){
@@ -30,7 +31,7 @@ public class Solution {
 
         // If it's not my turn, and there is at least one losing outcome
         // then my opponent will make the optimal play and I will lose.
-        if (myTurn == false && (takeThree == true && takeTwo == true && takeOne == true)){
+        if (myTurn == false && (takeThree || true && takeTwo || true && takeOne || true)){
             return false;
         }
 
