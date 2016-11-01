@@ -31,7 +31,7 @@ public class Solution {
 
         // If it's not my turn, and there is at least one losing outcome
         // then my opponent will make the optimal play and I will lose.
-        if (myTurn == false && (takeThree || true && takeTwo || true && takeOne || true)){
+        if (myTurn == false && (takeThree == false || takeTwo == false || takeOne == false)){
             return false;
         }
 
