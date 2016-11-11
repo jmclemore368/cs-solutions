@@ -1,11 +1,18 @@
 # problems
 
-The code in this repository will be in Java. With the help of some friends, perhaps the doors will open to other languages.
+## What is the primary purpose of this repository?
+The primary purpose of this repository is to provide solutions to problems within various computer science textbooks and OJ platforms.
+* I.e., providing solutions to the many end-of-chapter problems contained within Skiena's *The Algorithm Design Manual*
+* I.e., providing solutions to the many questions on [leetcode](https://www.leetcode.com).
 
+## What is the secondary purpose of this repository?
+The secondary purpose of this repository is to provide translations of pseudo-code within various computer science textbooks to actual source code.
+* I.e., translating all of the in-text examples within Skiena's *The Algorithm Design Manual* from C to Java.
 
-Includes problem solutions *and* translations of examples within computer sciences texts such as The Algorithm Design Manual by Skiena:
+## What is the primary language of this repository?
+Currently, everything will be in Java. I am open to a little help from my friends and expanding that choice.
 
-Includes solutions to problems on common OJ platforms such as LeetCode and HackerRank:
+## Any disclaimers?
 * Solutions to OJ problems do NOT aim to be micro-optimized solutions, however they do aim to achieve optimal Big-O time complexity,
-* The goal is to help myself and others *understand* the problem on a deep level. As such, readibility is emphasized, and obfuscated code is avoided.
-* To this end, I try to refrain from using quirky language constructs and may often be more verbose than necessary.
+* The goal is to help myself and others *understand* the problem on a deep level. As such, readibility is emphasized, and obfuscated code is avoided. 
+* Beware of incorrect solutions. I am merely an undergraduate student trying to do his good deed for the world. Please raise issues and submit pull requests as necessary.
