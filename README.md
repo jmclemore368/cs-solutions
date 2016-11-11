@@ -11,6 +11,4 @@
 Yes. I'm open to any help if you would like to contribute solutions or translations in another language.
 
 ## Any disclaimers?
-* Solutions to OJ problems do NOT aim to be micro-optimized solutions, however they do aim to achieve optimal Big-O time complexity,
-* The goal is to help myself and others *understand* the problem on a deep level. As such, readibility is emphasized, and obfuscated code is avoided. 
 * Beware of incorrect solutions. I am merely an undergraduate student trying to do his good deed for the world. Please raise issues and submit pull requests as necessary.
