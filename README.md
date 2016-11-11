@@ -6,11 +6,11 @@ The primary purpose of this repository is to provide solutions to problems withi
 * I.e., providing solutions to the many questions on [leetcode](https://www.leetcode.com).
 
 ## What is the secondary purpose of this repository?
-The secondary purpose of this repository is to provide translations of pseudo-code within various computer science textbooks to actual source code.
+The secondary purpose of this repository is to provide translations of source code (and pseudo-code) within various computer science textbooks to Java
 * I.e., translating all of the in-text examples within Skiena's *The Algorithm Design Manual* from C to Java.
 
-## What is the primary language of this repository?
-Currently, everything will be in Java. I am open to a little help from my friends and expanding that choice.
+## Will everything only be in Java?
+Yes. I'm open to any help if you would like to contribute solutions or translations in another language.
 
 ## Any disclaimers?
 * Solutions to OJ problems do NOT aim to be micro-optimized solutions, however they do aim to achieve optimal Big-O time complexity,
