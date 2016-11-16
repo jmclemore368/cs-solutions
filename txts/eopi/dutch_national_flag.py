@@ -85,7 +85,7 @@ def dutch_flag_partition_one_pass(pivot_index, a):
 	
 	
 def dutch_flag_partition_unit_test(test):
-	""" Test a random list and pivot """
+	""" Test 1000 random lists and pivots """
 	for i in range(1000):
 		n = random.randrange(1, 100)
 		a = rand_list(n)
