@@ -1,6 +1,4 @@
 #!/usr/bin/env python
-	
-	
 import random
 import time
 import sys
@@ -134,15 +132,3 @@ if __name__ == "__main__":
 	dutch_flag_partition_unit_test(dutch_flag_partition_slow)
 	dutch_flag_partition_unit_test(dutch_flag_partition_two_pass)
 	dutch_flag_partition_unit_test(dutch_flag_partition_one_pass)
-
-	
-
-	
-	
-	
-	
-
-	
-	
-	
-	
