@@ -84,7 +84,7 @@ def dutch_flag_partition_one_pass(pivot_index, a):
 			a[equal], a[larger] = a[larger], a[equal]
 	
 	
-def dutch_flag_partition_unit_test(dutch_flag_partition):
+def dutch_flag_partition_unit_test(test):
 	"""Test a random list and pivot, 1000 times."""
 	for i in range(1000):
 		n = random.randrange(1, 100)
@@ -94,22 +94,22 @@ def dutch_flag_partition_unit_test(dutch_flag_partition):
 		pivot_index = random.randrange(0, n)
 		pivot = a[pivot_index]
 
-		dutch_flag_partition(pivot_index, a)
+		test(pivot_index, a)
 		
-		if not check(pivot, a, a_dup):
+		if not check(pivot, a, a_dup, test):
 			sys.exit(0)
 			
-	print "All tests passed for " + dutch_flag_partition.__name__
+	print "All tests passed for " + test.__name__
 	
 	
 def rand_list(size):
-	l = []
+	a = []
 	for i in range(size):
-		l.append(random.randrange(0, 10))
-	return l
+		a.append(random.randrange(0, 10))
+	return a
 	
 	
-def check(pivot, a, a_dup):
+def check(pivot, a, a_dup, test):
 	n = len(a)
 	i = 0
 	while i < n and a[i] < pivot:
@@ -120,7 +120,7 @@ def check(pivot, a, a_dup):
 		i += 1
 		
 	if not i == n:
-		print "\nError with function: " + dutch_flag_partition.__name__
+		print "\nError with function: " + test.__name__
 		print "Before: [" + ",".join([str(x) for x in a_dup]) + "]"
 		print "\t After: [" + ",".join([str(x) for x in a]) + "]"
 		sys.exit(0)
