@@ -90,12 +90,3 @@ def check(a, a_dup, test):
 if __name__ == "__main__":
 	small_test()
 	plus_one_unit_test(plus_one)
-	
-	
-	
-	
-	
-	
-	
-	
-	
