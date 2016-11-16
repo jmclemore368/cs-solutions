@@ -1,27 +1,11 @@
 import random
 import time
-
+import sys
 	
-	
-#=========#
-	
-	
-	
-def swap(a, i, j):
-	temp = a[i]
-	a[i] = a[j]
-	a[j] = temp
-	
-	
-	
-#=========#
-	
-	
-	
-def dnfp_slow(a, idx):
+def dutch_flag_partition_slow(pivot_index, a):
 	""" O(n^2) Time & O(1) Space """
+	pivot = a[pivot_index]
 	
-	pivot = a[idx]
 	# First pass: group elements smaller than pivot.
 	i = 0
 	while i < len(a):
@@ -29,7 +13,7 @@ def dnfp_slow(a, idx):
 		# Look for a smaller element.
 		while j < len(a):
 			if a[j] < pivot:
-				swap(a, i, j)
+				a[i], a[j] = a[j], a[i]
 				break
 			j += 1
 		i += 1
@@ -42,79 +26,78 @@ def dnfp_slow(a, idx):
 		# than pivot, since first pass has moved them to the start of a.
 		while j >= 0 and a[j] >= pivot:
 			if a[j] > pivot:
-				swap(a, i, j)
+				a[i], a[j] = a[j], a[i]
 				break
 			j -= 1
 		i -= 1
 	
 	
-	
-#=========#
-	
-	
-	
-def dnfp_two_pass(a, idx):
+def dutch_flag_partition_two_pass(pivot_index, a):
 	""" O(n) Time & O(1) Space """
+	pivot = a[pivot_index]
 	
-	pivot = a[idx]
-
 	# First pass: group elements smaller than pivot
 	i = 0
-	s = 0
+	smaller = 0
 	while i < len(a):
 		if a[i] < pivot:
-			swap(a, i, s)
-			s += 1
+			a[i], a[smaller] = a[smaller], a[i]
+			smaller += 1
 		i += 1
 	
 	# Second pass: group elements larger than pivot
 	i = len(a) - 1
-	g =  len(a) - 1
+	larger =  len(a) - 1
 	while i >= 0 and a[i] >= pivot:
 		if a[i] > pivot:
-			swap(a, i, g)
-			g -= 1
+			a[i], a[larger] = a[larger], a[i] 
+			larger -= 1
 		i -= 1
 	
 	
-	
-#=========#
-	
-	
-	
-def dnfp_one_pass(a, idx):
+def dutch_flag_partition_one_pass(pivot_index, a):
 	""" O(n) Time & O(1) Space """
-	
-	pivot = a[idx]
+	pivot = a[pivot_index]
 	
 	# Keep the following invariants during partitioning:
-	# bottom group: a[0:s]
-	# middle group: a[s:e]
-	# unclassified group: a[e:g]
-	# top group: a[g:len(a)]
-	
-	
-	s = 0
-	e = 0
-	g = len(a)
+	# bottom group: a[0:smaller]
+	# middle group: a[smaller:equal]
+	# unclassified group: a[equal:larger]
+	# top group: a[larger:len(a)]
+	smaller = 0
+	equal = 0
+	larger = len(a)
 	
 	# Keep iterating as long as there is an unclassified element.
-	while e < g:
-		# a[e] is the incoming unclassified element.
-		if a[e] < pivot:
-			swap(a, s, e)
-			s += 1
-			e += 1
-		elif a[e] == pivot:
-			e += 1
-		else: # a[e] > pivot
-			g -= 1
-			swap(a, e, g)
+	while equal < larger:
+		# a[equal] is the incoming unclassified element.
+		if a[equal] < pivot:
+			a[smaller], a[equal] = a[equal], a[smaller]
+			smaller += 1
+			equal += 1
+		elif a[equal] == pivot:
+			equal += 1
+		else:  # a[equal] > pivot
+			larger -= 1
+			a[equal], a[larger] = a[larger], a[equal]
 	
 	
-	
-#=========#
-	
+def dutch_flag_partition_unit_test(dutch_flag_partition):
+	"""Test a random list and pivot, 1000 times."""
+	for i in range(1000):
+		n = random.randrange(1, 100)
+		a = rand_list(n)
+		a_dup = list(a)
+		
+		pivot_index = random.randrange(0, n)
+		pivot = a[pivot_index]
+
+		dutch_flag_partition(pivot_index, a)
+		
+		if not check(pivot, a, a_dup):
+			sys.exit(0)
+			
+	print "All tests passed for " + dutch_flag_partition.__name__
 	
 	
 def rand_list(size):
@@ -124,42 +107,32 @@ def rand_list(size):
 	return l
 	
 	
-	
-def dnfp_unit_test(dnfp):
-	
-	for i in range(1000):
-	
-		size = random.randrange(1, 100)
-		a = rand_list(size)
-		idx = random.randrange(0, size)
-		pivot = a[idx]
-
-		#print "\nBefore: [" + ",".join([str(x) for x in a]) + "]"
-		#print "\t Pivot: " + str(a[idx])
-		dnfp(a, idx)
-		#print "\t After: [" + ",".join([str(x) for x in a]) + "]"
+def check(pivot, a, a_dup):
+	n = len(a)
+	i = 0
+	while i < n and a[i] < pivot:
+		i += 1
+	while i < n and a[i] == pivot:
+		i += 1
+	while i < n and a[i] > pivot:
+		i += 1
 		
-		i = 0
-		while i < size and a[i] < pivot:
-			i += 1
-		while i < size and a[i] == pivot:
-			i += 1
-		while i < size and a[i] > pivot:
-			i += 1
+	if not i == n:
+		print "\nError with function: " + dutch_flag_partition.__name__
+		print "Before: [" + ",".join([str(x) for x in a_dup]) + "]"
+		print "\t After: [" + ",".join([str(x) for x in a]) + "]"
+		sys.exit(0)
 			
-		assert i == size
-		
-	
-	
-#=========#
-	
+	return True
 	
 	
 if __name__ == "__main__":
-	dnfp_unit_test(dnfp_slow)
-	dnfp_unit_test(dnfp_two_pass)
-	dnfp_unit_test(dnfp_one_pass)
-	print "Success!"
+	dutch_flag_partition_unit_test(dutch_flag_partition_slow)
+	dutch_flag_partition_unit_test(dutch_flag_partition_two_pass)
+	dutch_flag_partition_unit_test(dutch_flag_partition_one_pass)
+
+	
+
 	
 	
 	
