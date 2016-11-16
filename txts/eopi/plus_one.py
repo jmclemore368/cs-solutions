@@ -30,7 +30,7 @@ def small_test():
 	
 	
 def plus_one_unit_test(test):
-	""" Test a random list """
+	""" Test 1000 random lists """
 	for i in range(1000):
 		n = random.randrange(1, 12)
 		a = rand_list(n)
@@ -90,3 +90,12 @@ def check(a, a_dup, test):
 if __name__ == "__main__":
 	small_test()
 	plus_one_unit_test(plus_one)
+	
+	
+	
+	
+	
+	
+	
+	
+	
