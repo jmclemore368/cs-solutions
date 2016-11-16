@@ -85,7 +85,7 @@ def dutch_flag_partition_one_pass(pivot_index, a):
 	
 	
 def dutch_flag_partition_unit_test(test):
-	"""Test a random list and pivot, 1000 times."""
+	""" Test a random list and pivot """
 	for i in range(1000):
 		n = random.randrange(1, 100)
 		a = rand_list(n)
@@ -102,10 +102,10 @@ def dutch_flag_partition_unit_test(test):
 	print "All tests passed for " + test.__name__
 	
 	
-def rand_list(size):
+def rand_list(length):
 	a = []
-	for i in range(size):
-		a.append(random.randrange(0, 10))
+	for i in range(length):
+		a.append(random.randrange(0, 100))
 	return a
 	
 	
