@@ -58,6 +58,16 @@ def rand_list(length):
 	
 	
 def check(a, a_dup, test):
+	""" Check if int(a) is 1 more than int(a_dup)
+	
+	Since Python does not impose type limits like Java would 
+	(i.e., 32-bit ints), it is easy to test this by simply converting
+	each list to their respective big-number. In any other case, we 
+	would have to resort to manually printing and comparing each 
+	value to be certain. 
+	
+	"""
+	
 	# Convert a to number
 	a_num = 0
 	for n in a:
