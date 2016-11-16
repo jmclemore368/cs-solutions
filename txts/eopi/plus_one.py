@@ -30,9 +30,9 @@ def small_test():
 	
 	
 def plus_one_unit_test(test):
-	"""Test a random list, 1000 times."""
+	""" Test a random list """
 	for i in range(1000):
-		n = random.randrange(1, 100)
+		n = random.randrange(1, 12)
 		a = rand_list(n)
 		a_dup = list(a)
 		
@@ -44,10 +44,16 @@ def plus_one_unit_test(test):
 	print "All tests passed for " + test.__name__
 	
 	
-def rand_list(size):
+def rand_list(length):
 	a = []
-	for i in range(size):
-		a.append(random.randrange(0, 10))
+	
+	# Make sure first digit is not 0
+	a.append(random.randrange(1,10)) 
+	length -= 1
+	
+	for i in range(length):
+		a.append(random.randrange(0,10))
+		
 	return a
 	
 	
@@ -56,7 +62,7 @@ def check(a, a_dup, test):
 	a_num = 0
 	for n in a:
 		a_num = a_num * 10 + n
-	
+
 	# Convert a_dup to number
 	a_dup_num = 0
 	for n in a_dup:
