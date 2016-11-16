@@ -6,7 +6,5 @@
 2. To respect the author's work, I do not docstring or comment anything beyond what the author's have chosen to display in their own public GitHub repository. Occasionally, I will make original comments to clarify Pythonic idiosyncrasies.
    * See the original ideas [here](https://github.com/adnanaziz/epicode)
 
-3. I attempt to also recreate unit tests for each problem. Due to the fundamental differences between Python and C++/Java, these often must change accordingly.
-
 4. Accounting for the above, this repository otherwise attempts to follow the [PEP8 Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/)
 
