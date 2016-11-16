@@ -1,7 +1,12 @@
 import random
 import time
 import sys
-	
+
+# Credits:
+# https://github.com/adnanaziz/epicode/blob/master/java/src/main/java/com/epi/DutchNationalFlagSlowInplace.java
+# https://github.com/adnanaziz/epicode/blob/master/java/src/main/java/com/epi/DutchNationalFlagTwoPasses.java
+# https://github.com/adnanaziz/epicode/blob/master/java/src/main/java/com/epi/DutchNationalFlag.java
+
 def dutch_flag_partition_slow(pivot_index, a):
 	""" O(n^2) Time & O(1) Space """
 	pivot = a[pivot_index]
