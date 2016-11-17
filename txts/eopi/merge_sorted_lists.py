@@ -1,3 +1,4 @@
+# https://github.com/adnanaziz/epicode/blob/master/java/src/main/java/com/epi/MergeSortedLists.java
 	
 	
 class Node:
@@ -30,3 +31,5 @@ def merge_two_sorted_lists(list1, list2):
 	# Appends the remaining nodes of p1 or p2
 	current.next = p1 if p1 else p2
 	return dummy_head.next
+	
+	
