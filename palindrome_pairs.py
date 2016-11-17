@@ -11,7 +11,7 @@ class Solution(object):
         for i, word in enumerate(words):
             mapping[word] = i
             
-        # Edge case: Make sure that indices are distinct when checking.
+        # Note: Make sure that indices are distinct when checking.
         result = []
         for i, word in enumerate(words):
             
