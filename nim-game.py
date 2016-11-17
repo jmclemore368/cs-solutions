@@ -1,7 +1,10 @@
+https://leetcode.com/problems/nim-game/
+
 class Solution(object):
     def canWinNim(self, n):
         """
         :type n: int
         :rtype: bool
         """
-        return not n % 4 == 0
+        return  n % 4 != 0
+
