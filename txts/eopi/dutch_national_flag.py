@@ -1,5 +1,5 @@
 def dutch_flag_partition_slow(pivot_index, a):
-	"""https://github.com/adnanaziz/epicode/blob/master/java/src/main/java/com/epi/DutchNationalFlagSlowInplace.java"""
+	"""Page 62"""
 	pivot = a[pivot_index]
 	
 	# First pass: group elements smaller than pivot.
@@ -29,7 +29,7 @@ def dutch_flag_partition_slow(pivot_index, a):
 	
 	
 def dutch_flag_partition_two_pass(pivot_index, a):
-	"""https://github.com/adnanaziz/epicode/blob/master/java/src/main/java/com/epi/DutchNationalFlagTwoPasses.java"""
+	"""Page 63"""
 	pivot = a[pivot_index]
 	
 	# First pass: group elements smaller than pivot
@@ -52,7 +52,7 @@ def dutch_flag_partition_two_pass(pivot_index, a):
 	
 	
 def dutch_flag_partition_one_pass(pivot_index, a):
-	"""https://github.com/adnanaziz/epicode/blob/master/java/src/main/java/com/epi/DutchNationalFlag.java"""
+	"""Page 64"""
 	pivot = a[pivot_index]
 	
 	# Keep the following invariants during partitioning:
