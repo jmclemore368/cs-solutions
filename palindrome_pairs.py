@@ -13,7 +13,7 @@ class Solution(object):
             
         # Edge case: Make sure that indices are distinct when checking.
         result = []
-        for i, word in enumerate(words):
+        for word in words:
             
             # Edge case: Consider if Reverse(word) exists.
             # Then word + Reverse(word) makes a palindrome.
@@ -27,10 +27,10 @@ class Solution(object):
                 result.append([mapping[""], mapping[word]])
                         
             # Check every combination of substrings in word.
-            for j in range(1, len(word)):
+            for i in range(1, len(word)):
                 # Let word be given by LHS + RHS
-                lhs = word[:j]
-                rhs = word[j:]
+                lhs = word[:i]
+                rhs = word[i:]
                 
                 # Consider if LHS is a palindrome and Reverse(RHS) exists.
                 # Then Reverse(RHS) + word makes a palindrome.
