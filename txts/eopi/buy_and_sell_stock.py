@@ -1,3 +1,6 @@
+# https://github.com/adnanaziz/epicode/blob/master/java/src/main/java/com/epi/BuyAndSellStock.java
+	
+	
 def compute_max_profit(prices):
 	"""Page 69"""
 	min_price = prices[0]
@@ -6,5 +9,6 @@ def compute_max_profit(prices):
 		max_profit = max(max_profit, price - min_price)
 		min_price = min(min_price, price)
 	return max_profit
+	
 	
 
