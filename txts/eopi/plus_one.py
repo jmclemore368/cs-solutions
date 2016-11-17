@@ -1,5 +1,5 @@
 def plus_one(a):
-	""" O(n) Time & O(1) Space """
+	"""Page 65"""
 	n = len(a) - 1
 	a[n] = a[n] + 1
 	i = n
