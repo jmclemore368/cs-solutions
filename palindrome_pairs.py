@@ -11,20 +11,20 @@ class Solution(object):
         for i, word in enumerate(words):
             mapping[word] = i
             
-        # Note: Make sure that indices are distinct when checking.
+        # Edge case: Make sure that indices are distinct when checking.
         result = []
         for i, word in enumerate(words):
             
             # Edge case: Consider if Reverse(word) exists.
             # Then word + Reverse(word) makes a palindrome.
-            if word[::-1] in mapping and mapping[word[::-1]] != i:
-                result.append([i, mapping[word[::-1]]])
+            if word[::-1] in mapping and mapping[word[::-1]] != mapping[word]:
+                result.append([mapping[word], mapping[word[::-1]]])
                 
             # Edge case: Consider if empty string exists.
             # Then "" + word and word + "" make palindromes.
-            if "" in mapping and self.isPalindrome(word) and mapping[""] != i:
-                result.append([i, mapping[""]])
-                result.append([mapping[""], i])
+            if "" in mapping and self.isPalindrome(word) and mapping[""] != mapping[word]:
+                result.append([mapping[word], mapping[""]])
+                result.append([mapping[""], mapping[word]])
                         
             # Check every combination of substrings in word.
             for j in range(1, len(word)):
@@ -34,13 +34,13 @@ class Solution(object):
                 
                 # Consider if LHS is a palindrome and Reverse(RHS) exists.
                 # Then Reverse(RHS) + word makes a palindrome.
-                if self.isPalindrome(lhs) and rhs[::-1] in mapping and mapping[rhs[::-1]] != i:
-                    result.append([mapping[rhs[::-1]], i])
+                if self.isPalindrome(lhs) and rhs[::-1] in mapping and mapping[rhs[::-1]] != mapping[word]:
+                    result.append([mapping[rhs[::-1]], mapping[word]])
                     
                 # Consider if RHS is a palindrome and Reverse(LHS) exists.
                 # Then word + Reverse(LHS) makes a palindrome.
-                if self.isPalindrome(rhs) and lhs[::-1] in mapping and mapping[lhs[::-1]] != i:
-                    result.append([i, mapping[lhs[::-1]]]) 
+                if self.isPalindrome(rhs) and lhs[::-1] in mapping and mapping[lhs[::-1]] != mapping[word]:
+                    result.append([mapping[word], mapping[lhs[::-1]]]) 
         return result
                         
     def isPalindrome(self, word):
