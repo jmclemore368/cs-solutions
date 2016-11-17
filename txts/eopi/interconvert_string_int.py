@@ -9,7 +9,6 @@ def int_to_string(x):
 	while True:
 		s.append(str(x % 10))
 		x /= 10
-		
 		if x == 0:
 			break
 	
