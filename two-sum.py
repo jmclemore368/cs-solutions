@@ -8,9 +8,9 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        pairs = {}
+        mapping = {}
         for i, n in enumerate(nums):
-            if not target - n in pairs:
-                pairs[n] = i
+            if not target - n in mapping:
+                mapping[n] = i
             else:
-                return [pairs[target - n], i]
+                return [mapping[target - n], i]
