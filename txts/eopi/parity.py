@@ -21,9 +21,9 @@ def parity_table(x):
 	word_size = 16
 	bit_mask = 0xFFFF
 	return (  precomputed_parity[(x >> (3 * word_size)) & bit_mask]
-			^ precomputed_parity[(x >> (2 * word_size)) & bit_mask]
-			^ precomputed_parity[(x >> (1 * word_size)) & bit_mask]
-			^ precomputed_parity[(x >> (0 * word_size)) & bit_mask])
+		^ precomputed_parity[(x >> (2 * word_size)) & bit_mask]
+		^ precomputed_parity[(x >> (1 * word_size)) & bit_mask]
+		^ precomputed_parity[(x >> (0 * word_size)) & bit_mask])
 	
 	
 def parity_assoc(x):
