@@ -1,11 +1,5 @@
-#!/usr/bin/env python
-import random
-import time
-import sys
-	
-	
 def dutch_flag_partition_slow(pivot_index, a):
-	""" O(n^2) Time & O(1) Space """
+	"""https://github.com/adnanaziz/epicode/blob/master/java/src/main/java/com/epi/DutchNationalFlagSlowInplace.java"""
 	pivot = a[pivot_index]
 	
 	# First pass: group elements smaller than pivot.
@@ -35,7 +29,7 @@ def dutch_flag_partition_slow(pivot_index, a):
 	
 	
 def dutch_flag_partition_two_pass(pivot_index, a):
-	""" O(n) Time & O(1) Space """
+	"""https://github.com/adnanaziz/epicode/blob/master/java/src/main/java/com/epi/DutchNationalFlagTwoPasses.java"""
 	pivot = a[pivot_index]
 	
 	# First pass: group elements smaller than pivot
@@ -58,7 +52,7 @@ def dutch_flag_partition_two_pass(pivot_index, a):
 	
 	
 def dutch_flag_partition_one_pass(pivot_index, a):
-	""" O(n) Time & O(1) Space """
+	"""https://github.com/adnanaziz/epicode/blob/master/java/src/main/java/com/epi/DutchNationalFlag.java"""
 	pivot = a[pivot_index]
 	
 	# Keep the following invariants during partitioning:
@@ -82,53 +76,3 @@ def dutch_flag_partition_one_pass(pivot_index, a):
 		else:  # a[equal] > pivot
 			larger -= 1
 			a[equal], a[larger] = a[larger], a[equal]
-	
-	
-def dutch_flag_partition_unit_test(test):
-	""" Test 1000 random lists and pivots """
-	for i in range(1000):
-		n = random.randrange(1, 100)
-		a = rand_list(n)
-		a_dup = list(a)
-		
-		pivot_index = random.randrange(0, n)
-		pivot = a[pivot_index]
-
-		test(pivot_index, a)
-		
-		if not check(pivot, a, a_dup, test):
-			sys.exit(0)
-			
-	print "All tests passed for " + test.__name__
-	
-	
-def rand_list(length):
-	a = []
-	for i in range(length):
-		a.append(random.randrange(0, 100))
-	return a
-	
-	
-def check(pivot, a, a_dup, test):
-	n = len(a)
-	i = 0
-	while i < n and a[i] < pivot:
-		i += 1
-	while i < n and a[i] == pivot:
-		i += 1
-	while i < n and a[i] > pivot:
-		i += 1
-		
-	if not i == n:
-		print "\nError with function: " + test.__name__
-		print "Before: [" + ",".join([str(x) for x in a_dup]) + "]"
-		print "\t After: [" + ",".join([str(x) for x in a]) + "]"
-		sys.exit(0)
-			
-	return True
-	
-	
-if __name__ == "__main__":
-	dutch_flag_partition_unit_test(dutch_flag_partition_slow)
-	dutch_flag_partition_unit_test(dutch_flag_partition_two_pass)
-	dutch_flag_partition_unit_test(dutch_flag_partition_one_pass)
