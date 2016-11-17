@@ -8,10 +8,7 @@ class Node:
 		self.data = data
 		self.next = next
 		
-	def __str__(self):
-		return str(self.data)
-	
-	
+		
 def merge_two_sorted_lists(list1, list2):
 	"""Page 113"""
 	dummy_head = Node()
