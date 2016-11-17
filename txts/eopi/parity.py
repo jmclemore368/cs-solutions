@@ -1,3 +1,9 @@
+# https://github.com/adnanaziz/epicode/blob/master/java/src/main/java/com/epi/Parity1.java
+# https://github.com/adnanaziz/epicode/blob/master/java/src/main/java/com/epi/Parity2.java
+# https://github.com/adnanaziz/epicode/blob/master/java/src/main/java/com/epi/Parity3.java
+# https://github.com/adnanaziz/epicode/blob/master/java/src/main/java/com/epi/Parity4.java
+	
+	
 def parity_bit_by_bit(x):
 	"""Page 46"""
 	result = 0
@@ -35,3 +41,5 @@ def parity_assoc(x):
 	x ^= x >> 2
 	x ^= x >> 1
 	return x & 0x1
+	
+	
