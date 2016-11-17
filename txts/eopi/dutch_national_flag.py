@@ -1,3 +1,8 @@
+# https://github.com/adnanaziz/epicode/blob/master/java/src/main/java/com/epi/DutchNationalFlagSlowInplace.java
+# https://github.com/adnanaziz/epicode/blob/master/java/src/main/java/com/epi/DutchNationalFlagTwoPasses.java
+# https://github.com/adnanaziz/epicode/blob/master/java/src/main/java/com/epi/DutchNationalFlag.java
+	
+	
 def dutch_flag_partition_slow(pivot_index, a):
 	"""Page 62"""
 	pivot = a[pivot_index]
@@ -76,3 +81,5 @@ def dutch_flag_partition_one_pass(pivot_index, a):
 		else:  # a[equal] > pivot
 			larger -= 1
 			a[equal], a[larger] = a[larger], a[equal]
+			
+			
