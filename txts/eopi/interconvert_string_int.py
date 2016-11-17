@@ -11,10 +11,9 @@ def int_to_string(x):
 		x /= 10
 		if x == 0:
 			break
-	
+			
 	if is_negative:
 		s.append('-') # Adds the negative sign back
-	
 	s.reverse()
 	return ''.join(s)
 	
@@ -27,9 +26,4 @@ def string_to_int(s):
 		digit = int(s[i])	# I.e., s.charAt(i) - '0' in Java
 		result = result * 10 + digit
 		i += 1
-	
 	return -result if s[0] == '-' else result
-		
-		
-		
-print string_to_int("315")
