@@ -1,5 +1,4 @@
 # https://leetcode.com/submissions/detail/82971652/
-# Beats 90.32% as of 11/17/2016
 
 
 # Definition for singly-linked list.
