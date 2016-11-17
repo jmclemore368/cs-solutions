@@ -30,5 +30,5 @@ def string_to_int(s):
 		result = result * 10 + digit
 		i += 1
 	return -result if s[0] == '-' else result
-
-
+	
+	
