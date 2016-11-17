@@ -21,17 +21,15 @@ def int_to_string(x):
 	
 def string_to_int(s):
 	"""Page 95"""
-	i = 0
-	if s[0] == '-':
-		i = 1
-		
+	i = 1 if s[0] == '-' else 0
 	result = 0
 	while i < len(s):
 		digit = int(s[i])	# I.e., s.charAt(i) - '0' in Java
 		result = result * 10 + digit
 		i += 1
-
-	if s[0] == '-':
-		return -result
-	else:
-		return result
+	
+	return -result if s[0] == '-' else result
+		
+		
+		
+print string_to_int("315")
