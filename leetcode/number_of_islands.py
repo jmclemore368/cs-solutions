@@ -13,7 +13,7 @@ class Solution(object):
             for j, char in enumerate(row):
                 if char == '1':  # Island
                     num_islands += 1
-                    self.bfs(grid, i, j)
+                    self.breadthFirstSearch(grid, i, j)
         return num_islands
         
     def breadthFirstSearch(self, grid, i, j):
