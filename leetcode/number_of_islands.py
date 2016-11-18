@@ -16,7 +16,7 @@ class Solution(object):
                     self.bfs(grid, i, j)
         return num_islands
         
-    def breadth_first_search(self, grid, i, j):
+    def breadthFirstSearch(self, grid, i, j):
         q = collections.deque()
         grid[i][j] = '-1'
         q.append((i, j))
