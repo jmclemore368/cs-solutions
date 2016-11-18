@@ -12,6 +12,7 @@ class Solution(object):
         p1 = 0
         largest_len = 0
         while p1 < len(s):
+            # Maintain sliding window of unique characters 
             char = s[p1]
             if char in mapping and mapping[char] >= p2:
                 p2 = mapping[char] + 1
