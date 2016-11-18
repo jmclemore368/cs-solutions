@@ -1,6 +1,5 @@
 # https://leetcode.com/problems/number-of-islands/
 
-import collections
 
 class Solution(object):
     
