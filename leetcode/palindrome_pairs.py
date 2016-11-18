@@ -20,9 +20,9 @@ class Solution(object):
             if word[::-1] in mapping and mapping[word[::-1]] != mapping[word]:
                 result.append([mapping[word], mapping[word[::-1]]])
                 
-            # Edge case: Consider if empty string exists.
+            # Edge case: Consider if word is a palindrome and empty string exists.
             # Then "" + word and word + "" make palindromes.
-            if "" in mapping and self.isPalindrome(word) and mapping[""] != mapping[word]:
+            if self.isPalindrome(word) and "" in mapping and mapping[""] != mapping[word]:
                 result.append([mapping[word], mapping[""]])
                 result.append([mapping[""], mapping[word]])
                         
