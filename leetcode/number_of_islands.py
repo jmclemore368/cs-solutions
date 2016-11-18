@@ -11,7 +11,7 @@ class Solution(object):
         num_islands = 0
         for i, row in enumerate(grid):
             for j, char in enumerate(row):
-                if char == '1':  # Island
+                if char == '1':  # (i, j) is an Island
                     num_islands += 1
                     self.breadthFirstSearch(grid, i, j)
         return num_islands
@@ -27,17 +27,17 @@ class Solution(object):
              # Add above
             if (i - 1) >= 0 and grid[i - 1][j] == '1':
                 q.append((i - 1, j))
-                grid[i-1][j] = '-1'
+                grid[i - 1][j] = '-1'
                 
             # Add below
             if (i + 1) < len(grid) and grid[i + 1][j] == '1':   
                 q.append((i + 1, j))
-                grid[i+1][j] = '-1'
+                grid[i + 1][j] = '-1'
                   
             # Add left  
             if (j - 1) >= 0 and grid[i][j - 1] == '1':  
-                q.append((i ,j - 1))
-                grid[i][j-1] = '-1'
+                q.append((i, j - 1))
+                grid[i][j - 1] = '-1'
                 
             # Add right
             if (j + 1) < len(grid[i]) and grid[i][j + 1] == '1':
