@@ -24,22 +24,22 @@ class Solution(object):
             # Indices to check
             i, j = q.popleft()
             
-             # Add above
+             # Explore above
             if (i - 1) >= 0 and grid[i - 1][j] == '1':
                 q.append((i - 1, j))
                 grid[i - 1][j] = '-1'
                 
-            # Add below
+            # Explore below
             if (i + 1) < len(grid) and grid[i + 1][j] == '1':   
                 q.append((i + 1, j))
                 grid[i + 1][j] = '-1'
                   
-            # Add left  
+            # Explore left  
             if (j - 1) >= 0 and grid[i][j - 1] == '1':  
                 q.append((i, j - 1))
                 grid[i][j - 1] = '-1'
                 
-            # Add right
+            # Explore right
             if (j + 1) < len(grid[i]) and grid[i][j + 1] == '1':
                 q.append((i, j + 1))
                 grid[i][j + 1] = '-1'
