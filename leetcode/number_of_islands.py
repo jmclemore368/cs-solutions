@@ -8,15 +8,15 @@ class Solution(object):
         :type grid: List[List[str]]
         :rtype: int
         """
-        island_count = 0
+        num_islands = 0
         for i, row in enumerate(grid):
             for j, char in enumerate(row):
                 if char == '1':  # Island
-                    island_count += 1
+                    num_islands += 1
                     self.bfs(grid, i, j)
-        return island_count
+        return num_islands
         
-    def bfs(self, grid, i, j):
+    def breadth_first_search(self, grid, i, j):
         q = collections.deque()
         grid[i][j] = '-1'
         q.append((i, j))
