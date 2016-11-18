@@ -10,6 +10,7 @@ class Solution(object):
         """
         mapping = {}
         for i, n in enumerate(nums):
+            # Look for the complement
             if not target - n in mapping:
                 mapping[n] = i
             else:
