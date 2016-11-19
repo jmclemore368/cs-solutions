@@ -1,9 +1,6 @@
 # https://leetcode.com/submissions/detail/83163467/
 
 
-
-
-'''
 class Solution(object):
     def frequencySort(self, s):
         """
@@ -34,6 +31,6 @@ class Solution(object):
             result.append(freq * -1 * char)  # Multiple by -1 again to revert 
             
         return ''.join(result)
-'''
+
         
  
