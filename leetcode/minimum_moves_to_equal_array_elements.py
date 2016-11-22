@@ -7,7 +7,6 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-
         smallest_element = min(nums)
 
         # The number of moves is the sum of all (Xi - smallest_element)
