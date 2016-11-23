@@ -17,9 +17,8 @@ class Solution(object):
         result = []
         stack_one = []
         stack_two = []
-        
+
         stack_one.append(root)
-        
         while stack_one or stack_two:
             level = []
             while stack_one:
@@ -44,8 +43,7 @@ class Solution(object):
                         stack_one.append(top.left)
             if level:
                 result.append(level)        
-                    
-                        
+          
         return result
                         
     
