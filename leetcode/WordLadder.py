@@ -17,7 +17,7 @@ class Solution(object):
         Given some beginWord and endWord, we want to change beginWord 1 character at a time.
         Think of the transformation from beginWord -> endWord as a series of levels.
         Each level contains all possible transformations from the previous level that exist in wordList.
-        Furthermore, no level contains words from any previous level. 
+        Furthermore, no level contains words from any previous level (no previously "visited" words). 
         With that said, we see this problem is essentially a BFS.
         If a transformation is endWord is possible, we will always eventually find it.
         
