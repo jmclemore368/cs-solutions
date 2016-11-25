@@ -20,15 +20,15 @@ class Solution(object):
         Furthermore, no level contains words from any previous level.
         If a transformation is endWord is possible, we will always eventually converge to it.
         
-            hit*
+            hit*        Level 1
              |
-            hot
+            hot         Level 2
              |
-          dot, lot
+          dot, lot      Level 3
            |    |
-          dog   log
+          dog   log     Level 4
            |
-          cog*
+          cog*          Level 5
 
         """
         visited = set()
