@@ -19,6 +19,7 @@ class Solution(object):
         Each level is a transformation from the previous level.
         Furthermore, no level contains words from any previous level.
         If a transformation is endWord is possible, we will always eventually converge to it.
+        
             hit*
              |
             hot
