@@ -19,7 +19,7 @@ class Solution(object):
         Each level contains all possible transformations from the previous level that exist in wordList.
         Furthermore, no level contains words from any previous level. 
         With that said, we see this problem is essentially a BFS.
-        If a transformation is endWord is possible, we will always eventually converge to it.
+        If a transformation is endWord is possible, we will always eventually find it.
         
             hit*        Level 1
              |
