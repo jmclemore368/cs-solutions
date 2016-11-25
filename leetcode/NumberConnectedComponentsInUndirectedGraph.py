@@ -22,7 +22,7 @@ class Solution(object):
         count = 0
         visited = set()
         for vertex in graph:
-            if not vertex in visited:
+            if vertex not in visited:
                 count += 1
                 self.depthFirstSearch(vertex, visited, graph)
         return count
@@ -30,7 +30,7 @@ class Solution(object):
     def depthFirstSearch(self, vertex, visited, graph):
         visited.add(vertex)
         for edge in graph[vertex]:
-            if not edge in visited:
+            if edge not in visited:
                 self.depthFirstSearch(edge, visited, graph)
             
         
