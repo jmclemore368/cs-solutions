@@ -16,8 +16,8 @@ class Solution(object):
         """
         Given some beginWord and endWord, we want to change beginWord 1 character at a time.
         Think of the transformation from beginWord -> endWord as a series of levels.
-        Each level is a transformation from the previous level.
-        Furthermore, no level contains words from any previous level.
+        Each level contains all possible transformations from the previous level.
+        Furthermore, no level contains words from any previous level. Thus, we see this is like a BFS.
         If a transformation is endWord is possible, we will always eventually converge to it.
         
             hit*        Level 1
