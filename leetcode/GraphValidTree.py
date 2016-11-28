@@ -12,20 +12,17 @@ class Solution(object):
         # Initialize subsets 
         parent = [-1] * n
         
-        # Iterate through edges (v1, v2) of graph.
-        # Find the subset that v1 and the subset that v2 belong to.
+        # Iterate through all edges of graph & find subset of both vertices of every edge.
         for edge in edges:
             x = self.find(parent, edge[0])
             y = self.find(parent, edge[1])
             
-            # If they are the same, then there is a cycle.
-            # Since trees do not have cycles, return false.
+            # If they are the same, then there is a cycle. Since trees do not have cycles, return false.
             if x == y:
                 return False
             self.union(parent, x, y)
         
-        
-        # Trees are not disjoint. Further, they have exactly 1 root node.
+        # Trees are not disjoint. Specifically, they have exactly 1 root node.
         count = parent.count(-1)
         return count == 1
         
@@ -40,8 +37,3 @@ class Solution(object):
         if parent[i] == -1:
             return i
         return self.find(parent, parent[i])
-    
-    
-     
-            
-        
