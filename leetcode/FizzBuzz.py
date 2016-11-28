@@ -17,5 +17,5 @@ class Solution(object):
             elif (i % 5) == 0:
                 result.append("Buzz")
             else:
-                result.append((str(i)))
+                result.append(str(i))
         return result
