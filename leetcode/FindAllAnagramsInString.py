@@ -19,7 +19,7 @@ class Solution(object):
             # Include a new char
             s_counter[s[i]] += 1
             
-            # This step is O(1), since there are at most 26 English letter
+            # This step is O(1), since there are at most 26 letters in the alphabet
             if s_counter == p_counter:
                 result.append(i - len(p) + 1)
                 
