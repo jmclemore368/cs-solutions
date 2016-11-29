@@ -37,7 +37,7 @@ class Solution(object):
         right = self.pathSumUtil(curr.right, sum, tar, prefix_sums)
         result = num_paths_to_curr + left + right 
         
-        # Since recursion goes bottom-up, we will no longer use this sum. Remove it.
+        # Since recursion goes bottom-up, we will no longer use this sum. Thus, we must remove it.
         prefix_sums[sum] -= 1
         
         return result
