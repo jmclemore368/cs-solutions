@@ -35,9 +35,9 @@ class Solution(object):
         Consider some node C, and any other arbitrary node N that is on the path between the root and C.
         
         Note the following:
-        (the sum from N -> C) = (prefix sum of C) - (prefix sum of N)
-        (prefix sum of N) = (prefix sum of C) - (sum from N -> C)           # Rearrange
-        (prefix sum of N) = (prefix sum of C) - tar                         # We want the path N -> C to equal tar
+        (path sum from N -> C) = (prefix sum of C) - (prefix sum of N)
+        (prefix sum of N) = (prefix sum of C) - (path from N -> C)           # Rearrange
+        (prefix sum of N) = (prefix sum of C) - tar                          # We want all paths sums N -> C that equal tar
         
         The strategy is to keep track of all the prefix sums in a hash table. 
         1. For every node C, check if (prefix sum of C) - tar exists.
