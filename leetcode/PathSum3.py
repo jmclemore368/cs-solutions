@@ -40,10 +40,9 @@ class Solution(object):
         (prefix sum of N) = (prefix sum of C) - tar                         # We want the path N -> C to equal tar
         
         The strategy is to keep track of all the prefix sums in a hash table. 
-        Note that there may be multiple prefix sums that are equal, so we also keep track of frequencies.
-        Thus, for every node C and its prefix sum P, check if another node N with prefix sum (P - tar) exists.
-        If (P - tar) exists in the table, there must be some node N between the root and C with the desired path sum.
-        
+        1. For every node C, check if (prefix sum of C) - tar exists.
+        2. If it does, then this complement implies that there exists a node N, such that the sum from N -> C = tar
+
         Note that the recursion is calculated bottom-up.
         Be sure to remove (or decrement) the prefix sum P when returning, since we have finished processing it.
         
