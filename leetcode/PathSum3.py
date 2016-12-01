@@ -29,7 +29,7 @@ class Solution(object):
              / \   \
             3  -2   1
             
-        Suppose we are looking for a sum tar = 8. We will use "prefix sums" to count the paths.
+        Suppose we are looking for a sum tar = 8. The idea is similar to two-sum, using the concept of "prefix-sums".
         
         A prefix sum for a node is the sum of values from the root to that node.
         Consider some node C, and any other arbitrary node N that is on the path between the root and C.
