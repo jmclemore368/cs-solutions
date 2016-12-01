@@ -18,4 +18,6 @@ class Solution(object):
                 count += 1
             else:
                 count -= 1
-        return major
+                
+         # Problem guarantees majority element. Otherwise: check if count is > 0. If not, there is no majority.
+        return major  
