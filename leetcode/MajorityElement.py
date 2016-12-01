@@ -19,6 +19,6 @@ class Solution(object):
             else:
                 count -= 1
                 
-         # Problem guarantees majority element. 
+        # Problem guarantees majority element. 
         # Otherwise: before returning check if count is > 0. If not, there is no majority.
         return major  
