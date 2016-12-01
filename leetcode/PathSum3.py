@@ -21,30 +21,32 @@ class Solution(object):
         
     def pathSumUtil(self, curr, sum, tar, prefix_sums):
         """
-              10
-             /  \
-            5   -3
-           / \    \
-          3   2   11
-         / \   \
-        3  -2   1
+                  10
+                 /  \
+          N ->  5   -3
+               / \    \
+        C ->  3   2   11
+             / \   \
+            3  -2   1
+            
+        Suppose we are looking for a sum tar = 8. We will use "prefix sums" to count the paths.
         
         A prefix sum for a node is the sum of values from the root to that node.
         Consider some node C, and any other arbitrary node N that is on the path between the root and C.
-        Then the (sum from C -> N) = (prefix sum of C) - (prefix sum of N)
         
-        Rearranging, note the (prefix sum of N) = (prefix sum of C) - (sum from C -> N)
-        Since we are searching for a specific target sum, then (sum from C -> N) = tar
-        Thus, we see that (prefix sum of N) = (prefix sum of C) - tar
+        Note the following:
+        (the sum from N -> C) = (prefix sum of C) - (prefix sum of N)
+        (prefix sum of N) = (prefix sum of C) - (sum from N -> C)           # Rearrange
+        (prefix sum of N) = (prefix sum of C) - tar                         # We want the path N -> C to equal tar
         
         The strategy is to keep track of all the prefix sums in a hash table. 
         Note that there may be multiple prefix sums that are equal, so we also keep track of frequencies.
-        Noting the above, for every prefix sum P in the recursion, we check to see if P - tar exists in our table.
-        If P - tar exists in the table, it implies there is some path(s) that sum to target.
+        Thus, for every node C and its prefix sum P, check if another node N with prefix sum (P - tar) exists.
+        If (P - tar) exists in the table, there must be some node N between the root and C with the desired path sum.
         
-        As an edge case, note that the recursion is calculated bottom-up.
-        Thus we must be sure to remove (or decrement) the prefix sum P when we return since it is no longer in consideration. 
-
+        Note that the recursion is calculated bottom-up.
+        Be sure to remove (or decrement) the prefix sum P when returning, since we have finished processing it.
+        
         """
         if curr is None:
             return 0
