@@ -10,7 +10,7 @@ class Solution(object):
         # Parition according to the following loop invariants:
         # non-zero elements: nums[:p1]
         # zero elements: nums[p1:p2]
-        # unclassified elements:[p2:]
+        # unclassified elements: nums[p2:]
         p1 = 0 
         p2 = 0
         while p2 < len(nums):
