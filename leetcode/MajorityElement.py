@@ -7,15 +7,15 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        
+        # Boyer–Moore majority vote algorithm
         major = nums[0]
-        count = 1
-        for i in range(1, len(nums)):
-            if nums[i] == major:
-                count += 1
-            elif count == 0:
+        count = 0
+        for elem in nums:
+            if count == 0:
+                major = elem
                 count = 1
-                major = nums[i]
+            elif elem == major:
+                count += 1
             else:
                 count -= 1
         return major
