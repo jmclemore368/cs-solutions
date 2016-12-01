@@ -20,6 +20,5 @@ class Solution(object):
                 count -= 1
                 
         # Problem guarantees majority element. 
-        # Otherwise: before returning check if count is > 0. If not, there is no majority.
-        # if not count return None else return major
+        # Otherwise: Check if count is > 0. If not, there is no majority.
         return major  
