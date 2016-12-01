@@ -41,7 +41,7 @@ class Solution(object):
         
         The strategy is to keep track of all the prefix sums in a hash table. 
         1. For every node C, check if (prefix sum of C) - tar exists.
-        2. If it does, then this complement implies that there exists a node N, such that the sum from N -> C = tar
+        2. If it does, then this complement implies that there exists a node N, such that the path sum from N -> C = tar
 
         Note that the recursion is calculated bottom-up.
         Be sure to remove (or decrement) the prefix sum P when returning, since we have finished processing it.
