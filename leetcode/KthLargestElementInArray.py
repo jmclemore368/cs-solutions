@@ -14,10 +14,7 @@ class Solution(object):
         
         for element in nums:
             root = h[0]  # Min element
-            
             if element > root:  
-                # Pop head, push element
-                heapq.heapreplace(h, element)   
-                
+                heapq.heapreplace(h, element)  # Pop head, push element
         return h[0]
             
