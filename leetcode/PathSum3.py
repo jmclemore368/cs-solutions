@@ -21,6 +21,14 @@ class Solution(object):
         
     def pathSumUtil(self, curr, sum, tar, prefix_sums):
         """
+              10
+             /  \
+            5   -3
+           / \    \
+          3   2   11
+         / \   \
+        3  -2   1
+        
         A prefix sum for a node is the sum of values from the root to that node.
         Consider some node C, and any other arbitrary node N that is on the path between the root and C.
         Then the (sum from C -> N) = (prefix sum of C) - (prefix sum of N)
@@ -36,13 +44,7 @@ class Solution(object):
         
         As an edge case, note that the recursion is calculated bottom-up.
         Thus we must be sure to remove (or decrement) the prefix sum P when we return since it is no longer in consideration. 
-              10
-             /  \
-            5   -3
-           / \    \
-          3   2   11
-         / \   \
-        3  -2   1
+
         """
         if curr is None:
             return 0
