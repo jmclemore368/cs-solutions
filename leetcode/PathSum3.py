@@ -37,15 +37,13 @@ class Solution(object):
         Note the following:
         (path sum from N -> C) = (prefix sum of C) - (prefix sum of N)
         (prefix sum of N) = (prefix sum of C) - (path sum from N -> C)           # Rearrange
-        (prefix sum of N) = (prefix sum of C) - tar                              # We want all paths sums N -> C that equal tar
+        (prefix sum of N) = (prefix sum of C) - tar                              # We search for path sums that equal tar
         
-        The strategy is to keep track of all the prefix sums in a hash table. 
+        The strategy is to keep track of all the prefix sums for every node in a hash table.
         1. For every node C, check if (prefix sum of C) - tar exists.
-        2. If it does, then this complement implies that there exists a node N, such that the path sum from N -> C = tar
+        2. If it exists, then there must exist a node(s) N, such that the path sum from N -> C = tar
 
-        Note that the recursion is calculated bottom-up.
-        Be sure to remove (or decrement) the prefix sum P when returning, since we have finished processing it.
-        
+        Note that the recursion is calculated bottom-up. Thus, decrement the frequency of the prefix sum of C when returning. 
         """
         if curr is None:
             return 0
