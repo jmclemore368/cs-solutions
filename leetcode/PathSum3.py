@@ -36,7 +36,7 @@ class Solution(object):
         
         Note the following:
         (path sum from N -> C) = (prefix sum of C) - (prefix sum of N)
-        (prefix sum of N) = (prefix sum of C) - (path from N -> C)           # Rearrange
+        (prefix sum of N) = (prefix sum of C) - (path sum from N -> C)           # Rearrange
         (prefix sum of N) = (prefix sum of C) - tar                          # We want all paths sums N -> C that equal tar
         
         The strategy is to keep track of all the prefix sums in a hash table. 
