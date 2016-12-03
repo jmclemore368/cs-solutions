@@ -8,9 +8,9 @@ def find_num_permutations(word):
     Where ck gives the number of occurrences of each distinct character.
     
     For example, given "SUCCSS", the number of permutations is then:
-        6!
-     -------
-     3! * 2!
+          6!
+     ------------
+     3! * 2! * 1!
     
     """
     c = collections.Counter(word)
