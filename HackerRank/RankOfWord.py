@@ -2,6 +2,7 @@
 import math
 import collections
 
+
 def find_num_permutations(word):
     """
     The number of permutations of a string of length n is: n! / (c1! * c2 * ... * cn!)
@@ -19,6 +20,7 @@ def find_num_permutations(word):
     for key in c.iterkeys():
         denominator *= math.factorial(c[key])
     return numerator / denominator
+
 
 def find_rank_util_possible_repetition(word, sorted_word, rank, index):
     if index == len(word) - 1:
