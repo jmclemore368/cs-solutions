@@ -27,14 +27,14 @@ def find_rank_util_possible_repetition(word, sorted_word, rank, index):
     i = 0
     while i < len(sorted_word):
         remaining_chars = sorted_word[:i] + sorted_word[i + 1:]
-
-        if sorted_word[i] == word[index]:
-            return find_rank_util_possible_repetition(word, remaining_chars, rank, index + 1)
-        else:
+        
+        if sorted_word[i] != word[index]:
             rank += find_num_permutations(remaining_chars)
             # If the next chars are the same, then they will not create any new words. Skip over these.
             while i < len(sorted_word) and sorted_word[i] == sorted_word[i + 1]:
                 i += 1
+        else:
+            return find_rank_util_possible_repetition(word, remaining_chars, rank, index + 1)
                 
         i += 1
 
