@@ -38,8 +38,7 @@ class MedianFinder:
             if len(self.max_heap) <= len(self.min_heap):
                 heapq.heappush(self.max_heap, num * -1)
                 
-            # Else, max_heap has more elements than min_heap. 
-            # This is an edge case. Recall that we want our heaps to be at most 1 difference in size.
+            # Else, max_heap has more elements than min_heap. We need to balance the heap sizes.
             # For example: min_heap = [26, 35, 28, 40], max_heap = [19, 16, 14, 14, 8]
             # For num = 25. Note 25 > 19. Therefore, it should actually go in min_heap.
             # For num = 17. Note 17 < 19. Therefore, we do a switch: put 19 into min_heap, and 17 into max_heap.
@@ -60,9 +59,9 @@ class MedianFinder:
             if len(self.min_heap) <= len(self.max_heap):
                 heapq.heappush(self.min_heap, num)
                 
-            # Else, min_heap has more elements than max_heap. 
+            # Else, min_heap has more elements than max_heap. We need to balance the heap sizes.
             # For example: min_heap = [26, 35, 37, 28, 40], max_heap = [19, 16, 14, 14, 8]
-            # Since num is > root of min_heap, root of min_heap gets kicked out to lower half (max_heap).
+            # Since num is > root of min_heap, root of min_heap gets kicked out to lower half (max_heap) every time.
             else:
                 top = heapq.heappop(self.min_heap)
                 heapq.heappush(self.max_heap, top * -1)
