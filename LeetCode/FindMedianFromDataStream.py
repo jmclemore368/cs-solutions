@@ -20,10 +20,6 @@ class MedianFinder:
         :type num: int
         :rtype: void
         """
-        
-        # We initialize the min_heap first. This means that if there is an odd number of elements
-        # at the end, the min_heap will have exactly 1 more element. That element is the 
-        # root, which is the median of the data stream.
         if not self.min_heap:
             heapq.heappush(self.min_heap, num)
             return
@@ -74,14 +70,16 @@ class MedianFinder:
         :rtype: float
         """
         if len(self.min_heap) == len(self.max_heap):
-            min_top = self.min_heap[0]
-            max_top = self.max_heap[0] * -1
-            return ((float(min_top) + max_top) / 2)
+            min_top = float(self.min_heap[0])
+            max_top = float(self.max_heap[0] * -1)
+            return ((min_top + max_top) / 2)
         else:
             if len(self.min_heap) > len(self.max_heap):
-                return float(self.min_heap[0])
+                min_top = float(self.min_heap[0])
+                return min_top
             else:
-                return float(self.max_heap[0] * -1)
+                max_top = float(self.max_heap[0] * -1)
+                return max_top
            
 
 # Your MedianFinder object will be instantiated and called as such:
