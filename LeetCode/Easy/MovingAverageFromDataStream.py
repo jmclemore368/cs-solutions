@@ -2,7 +2,6 @@
 
 
 class MovingAverage(object):
-
     def __init__(self, size):
         """
         Initialize your data structure here.
