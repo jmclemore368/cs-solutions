@@ -7,7 +7,6 @@ class Logger(object):
         Initialize your data structure here.
         """
         self.map = {}
-        
 
     def shouldPrintMessage(self, timestamp, message):
         """
