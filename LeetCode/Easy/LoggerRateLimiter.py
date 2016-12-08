@@ -21,9 +21,7 @@ class Logger(object):
             self.map[message] = timestamp
             return True
         
-        # Get the previous latest time       
         latest_time = self.map[message]
-    
         if latest_time > timestamp - 10:
             return False
         else:
