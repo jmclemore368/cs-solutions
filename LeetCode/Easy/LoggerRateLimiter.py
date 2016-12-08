@@ -17,7 +17,6 @@ class Logger(object):
         :type message: str
         :rtype: bool
         """
-
         if not message in self.map:
             self.map[message] = timestamp
             return True
