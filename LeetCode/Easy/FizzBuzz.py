@@ -23,7 +23,7 @@ class Solution(object):
         return result
 
 
-"""
+'''
 # Correct, but significantly slower due to more comparisons. 
 
 class Solution(object):
@@ -43,5 +43,5 @@ class Solution(object):
             else:
                 result.append(str(i))
         return result
-"""
+'''
     
