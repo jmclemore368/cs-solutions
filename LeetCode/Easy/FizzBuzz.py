@@ -7,10 +7,8 @@ class Solution(object):
         :type n: int
         :rtype: List[str]
         """
-        
-        # Initialize values
         result = [str(i) for i in range(1, n + 1)]
-
+        
         for i in range(1, n + 1):
             s = []
             if i % 3 == 0: 
