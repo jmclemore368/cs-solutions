@@ -12,7 +12,7 @@ class Solution(object):
             for y, item in enumerate(row):
                 # There is guaranteed to be one island. Once we find it, BFS will find all connected cells.
                 # Thus, we can break afterwards as there's nothing left to explore.
-                if grid[x][y] == 1:
+                if item == 1:
                     perimeter += self.islandPerimeterBFS(grid, x, y)
                     break
         return perimeter
