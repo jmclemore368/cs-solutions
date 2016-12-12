@@ -24,11 +24,11 @@ class Solution(object):
         q.append((x, y))
         grid[x][y] = -1
         while q:
-            x, y = q.popleft()
-            # 3 checks for above, below, left, and right.
+            # For each (x, y) that we are exploring, we check above, below, left, and right.
             # If out of bounds, increase count by 1.
-            # If 0, increase count by 1.
-            # If 1, add to queue to explore and mark visited.
+            # else if 0, increase count by 1.
+            # else if 1, add to queue to explore and mark visited.
+            x, y = q.popleft()
             
             # Explore above
             if (x - 1) < 0: 
