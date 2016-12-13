@@ -24,7 +24,7 @@ class Solution(object):
         
         Proof (Credits to user gaojianchao1991)
         1) 4^n - 1 = (2^n + 1) * (2^n - 1)
-        2) among any 3 consecutive numbers, there must be one that is a multiple of 3
+        2) Among any 3 consecutive numbers, there must be one that is a multiple of 3
         3) Thus, among (2^n-1), (2^n), (2^n+1), one of them must be a multiple of 3
         4) (2^n) cannot be the one, therefore either (2^n-1) or (2^n+1) must be a multiple of 3,
         5) Since these are factors of 4^n-1, then 4^n-1 must be a multiple of 3 as well.
