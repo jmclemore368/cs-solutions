@@ -1,6 +1,5 @@
 # https://leetcode.com/problems/power-of-four/
 
-
 class Solution(object):
     def isPowerOfFour(self, num):
         """
@@ -32,5 +31,26 @@ class Solution(object):
         return num & (num - 1) == 0 and (num - 1) % 3 == 0
         
 
+'''
+# Non-optimal but more intiutive solution using looping.
+
+
+class Solution(object):
+    def isPowerOfFour(self, num):
+        """
+        :type num: int
+        :rtype: bool
+        """
+
+        # Edge case
+        if num == 0:
+            return False
             
-        
+        # Continuously divide by 4 until we reach 1.
+        # If at any point num is not divisible by 4, then return false. 
+        while num != 1:
+            if num % 4 != 0:
+                return False
+            num /= 4
+        return True  
+'''
